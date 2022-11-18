@@ -1,0 +1,267 @@
+* {
+	box-sizing: 0;
+	margin: 0;
+	padding: 0;
+}
+:root {
+	--gallow-color: black;
+	--text-color: #fff;
+}
+body {
+	background: url(./img/4.jpeg);
+	background-size: cover;
+	background-position: center;
+}
+.game {
+	position: relative;
+	transform: scale(0.5);
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+.enter-password {
+	margin-top: 4rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	height: 200px;
+	width: 100%;
+}
+.enter-password input {
+	margin-top: 2rem 0;
+	font-size: 24px;
+	border-radius: 5px;
+	text-align: center;
+	padding: 0.3rem;
+	margin-top: 20px;
+	z-index: 2;
+}
+.enter-password input::placeholder {
+	color: salmon;
+	font-size: 1rem;
+}
+.enter-password label {
+	font-size: 20px;
+	margin-top: 20px;
+	z-index: 2;
+	color: var(--text-color);
+}
+.descripe-area {
+	display: none;
+	justify-content: center;
+	align-items: center;
+	height: 200px;
+	font-size: 28px;
+	color: var(--text-color);
+}
+.hangman {
+	position: relative;
+	width: 50%;
+	height: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+.head {
+	height: 100px;
+	width: 100px;
+	position: relative;
+	top: 10px;
+	background-color: var(--gallow-color);
+	border-radius: 50%;
+	display: inline-block;
+}
+.neck {
+	height: 25px;
+	width: 25px;
+	background-color: var(--gallow-color);
+	display: inline-block;
+}
+.body {
+	display: flex;
+	flex-direction: row;
+	position: relative;
+	height: 200px;
+	width: 100px;
+	display: inline-block;
+}
+.chest {
+	position: relative;
+	height: 200px;
+	width: 100px;
+	background-color: var(--gallow-color);
+	border-radius: 20%;
+	display: inline-block;
+}
+.right-hand {
+	position: relative;
+	top: -200px;
+	right: -120px;
+	height: 150px;
+	width: 20px;
+	transform: rotate(-45deg);
+	background-color: var(--gallow-color);
+	display: inline-block;
+	border-radius: 20%;
+}
+.left-hand {
+	position: relative;
+	top: -200px;
+	left: -70px;
+	height: 150px;
+	width: 20px;
+	transform: rotate(45deg);
+	background-color: var(--gallow-color);
+	display: inline-block;
+	border-radius: 20%;
+}
+.left-leg {
+	position: relative;
+	top: -16px;
+	right: -25px;
+	height: 150px;
+	width: 20px;
+	transform: rotate(-15deg);
+	background-color: var(--gallow-color);
+	display: inline-block;
+	border-radius: 20%;
+}
+.right-leg {
+	position: relative;
+	top: -15px;
+	left: -25px;
+	height: 150px;
+	width: 20px;
+	transform: rotate(15deg);
+	background-color: var(--gallow-color);
+	display: inline-block;
+	border-radius: 20%;
+}
+.gallows {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	right: 0;
+}
+.gallows-right {
+	position: relative;
+	width: 20px;
+	height: 100%;
+	right: -80%;
+	background-color: var(--gallow-color);
+}
+.gallows-top {
+	margin-left: 30%;
+	position: relative;
+	top: -600px;
+	width: 50%;
+	height: 20px;
+	background-color: var(--gallow-color);
+}
+.rope {
+	position: relative;
+	top: 10px;
+	width: 10px;
+	height: 120px;
+	background-color: var(--gallow-color);
+}
+.gallows-part {
+	opacity: 0;
+}
+
+.password {
+	display: flex;
+	justify-content: center;
+	color: var(--text-color);
+}
+.letter {
+	font-size: 3rem;
+	margin: 0 20px;
+	opacity: 0;
+}
+.show-animation {
+	animation: show-animation 1s forwards;
+}
+.letter-line {
+	position: relative;
+}
+.line {
+	position: relative;
+	width: 80%;
+	margin: 0 10%;
+	height: 3px;
+	background-color: black;
+}
+.letter-input {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	margin-top: 20px;
+}
+.letter-input input {
+	display: none;
+	width: 50px;
+	height: 50px;
+	font-size: 2rem;
+	border-radius: 5px;
+	padding: auto;
+	text-align: center;
+}
+.lose,
+.win {
+	position: absolute;
+	text-align: center;
+	top: 30%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	font-size: 40px;
+	color: #fff;
+}
+.win {
+	display: none;
+	opacity: 0;
+	z-index: 10;
+}
+.lose {
+	display: none;
+	position: absolute;
+	z-index: 10;
+}
+.enter-password button,
+.lose button,
+.win button,
+.change-password {
+	font-size: 20px;
+	margin-top: 15px;
+	padding: 0.7rem 1.5rem;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.4s, color 0.4s;
+	z-index: 2;
+}
+.enter-password button:hover,
+.lose button:hover,
+.win button:hover,
+.change-password:hover {
+	background-color: rgb(27, 48, 169);
+	color: #fff;
+}
+.show {
+	opacity: 1;
+	display: flex;
+}
+@keyframes show-animation {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
