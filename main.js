@@ -12,14 +12,16 @@ const losePopup = document.querySelector('.lose');
 
 const enteredPasswordArea = document.querySelector('.enter-password');
 const passwordZone = document.querySelector('.password');
+const inputLetterBox = document.querySelector('.letter-input');
 const inputLetter = document.querySelector('.letter-input input');
 const changeButton = document.querySelector('.change-password');
+const backButton = document.querySelector('.back');
 
 let lettersArray = [];
 const passwordArray = [
 	{
-		password: 'Kubuś Puchatek Chuj',
-		descripe: 'Gdy nie lubisz misia.',
+		password: 'Kubuś Puchatek',
+		descripe: 'Słynny Kuba',
 	},
 	{
 		password: 'Mela',
@@ -53,7 +55,7 @@ const startGame = () => {
 		lettersArray = [...newPasswordString];
 
 		createLettersZone();
-		inputLetter.style.display = 'flex';
+		inputLetterBox.style.display = 'flex';
 	}
 };
 // Draw generate password
@@ -68,7 +70,7 @@ const generateGame = () => {
 	lettersArray = [...newPasswordString];
 
 	createLettersZone();
-	inputLetter.style.display = 'flex';
+	inputLetterBox.style.display = 'flex';
 };
 
 // Create password zone
@@ -175,7 +177,7 @@ const restart = () => {
 	losePopup.style.display = 'none';
 	inputLetter.disabled = false;
 	passwordZone.textContent = '';
-	inputLetter.style.display = 'none';
+	inputLetterBox.style.display = 'none';
 	enteredPasswordArea.style.display = 'flex';
 	descripeArea.style.display = 'none';
 	newPasswordDes.value = '';
@@ -193,5 +195,6 @@ startButton.addEventListener('click', startGame);
 generateButton.addEventListener('click', generateGame);
 changeButton.addEventListener('click', restart);
 changeButton.addEventListener('click', generateGame);
+backButton.addEventListener('click', restart);
 restartButtonLose.addEventListener('click', restart);
 restartButtonWin.addEventListener('click', restart);
