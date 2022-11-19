@@ -21,7 +21,7 @@ const backButton = document.querySelector('.back');
 let lettersArray = [];
 const passwordArray = [
 	{
-		password: 'Kubuś Puchatek?',
+		password: 'Kubuś Puchatek',
 		descripe: 'Słynny Kubuś',
 	},
 	{
