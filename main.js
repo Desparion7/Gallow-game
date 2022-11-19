@@ -5,6 +5,7 @@ const generateButton = document.querySelector('.generate-button');
 const descripeArea = document.querySelector('.descripe-area');
 
 const gallowParts = document.querySelectorAll('.gallows-part');
+const hangman = document.querySelector('.hangman');
 const restartButtonLose = document.querySelector('.restart-lose');
 const restartButtonWin = document.querySelector('.restart-win');
 const winPopup = document.querySelector('.win');
@@ -20,12 +21,12 @@ const backButton = document.querySelector('.back');
 let lettersArray = [];
 const passwordArray = [
 	{
-		password: 'Kubuś Puchatek',
-		descripe: 'Słynny Kuba',
+		password: 'Kubuś Puchatek?',
+		descripe: 'Słynny Kubuś',
 	},
 	{
 		password: 'Mela',
-		descripe: 'Kot',
+		descripe: 'Kot.',
 	},
 	{
 		password: 'Antarktyda',
@@ -39,10 +40,15 @@ const passwordArray = [
 		password: 'mszyc i czerwców',
 		descripe: 'Spadź występująca w miodzie spadziowym to wydalina?',
 	},
+	{
+		password: 'Jarek i Ciabat',
+		descripe: 'Kto nie umie grać w Dote?',
+	},
 ];
 
 // Draw user password
 const startGame = () => {
+	hangman.style.display='flex'
 	if (newPasswordDes.value === '' || newPassword.value === '') {
 		newPassword.placeholder = 'Wprowadz hasło!';
 		newPasswordDes.placeholder = 'Wprowadz opis hasła!';
@@ -60,6 +66,7 @@ const startGame = () => {
 };
 // Draw generate password
 const generateGame = () => {
+	hangman.style.display='flex'
 	const number = Math.floor(Math.random() * passwordArray.length);
 	descripeArea.textContent = passwordArray[number].descripe;
 

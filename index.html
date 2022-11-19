@@ -8,14 +8,14 @@
 		<link rel="stylesheet" href="./style.css" />
 	</head>
 	<body>
-		<div class="descripe-area">Mały śmierdzący miś</div>
+		<div class="descripe-area"></div>
 		<div class="enter-password">
 			<label for="password-input"
-				>Wprowadz hasło (bez znaków specjalnych)</label
+				>Wprowadz hasło</label
 			>
-			<input class="password-input" name="password-input" type="text" />
+			<input class="password-input" name="password-input" type="text" maxlength="30" />
 			<label for="descripe-input">Wprowadz opis hasła</label>
-			<input class="descripe-input" name="descripe-input" type="text" />
+			<input class="descripe-input" name="descripe-input" type="text" maxlength="30"/>
 			<button class="start-button">Moje hasło</button>
 			<button class="generate-button">Generuj losowe hasło</button>
 		</div>
@@ -44,7 +44,7 @@
 			<input type="text" style="text-transform: uppercase" maxlength="1" />
 			<div class="button-box">
 				<button class="change-password">Zmień hasło</button>
-				<button class="back">Strona startowa</button>
+				<button class="back">Menu główne</button>
 			</div>
 		</div>
 		<div class="lose gallows-part" data-opacity="0">
