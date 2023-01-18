@@ -4,63 +4,67 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Document</title>
+		<title>Gallow</title>
 		<link rel="stylesheet" href="./style.css" />
 	</head>
 	<body>
-		<div class="descripe-area"></div>
-		<div class="enter-password">
-			<div class="title">Szubienica</div>
-			<label for="password-input">Wprowadz hasło</label>
-			<input
-				class="password-input"
-				name="password-input"
-				type="text"
-				maxlength="30"
-			/>
-			<label for="descripe-input">Wprowadz opis hasła</label>
-			<input
-				class="descripe-input"
-				name="descripe-input"
-				type="text"
-				maxlength="30"
-			/>
-			<button class="start-button">Moje hasło</button>
-			<button class="generate-button">Generuj losowe hasło</button>
-		</div>
-		<div class="game">
-			<div class="hangman">
-				<div class="rope gallows-part" data-opacity="0"></div>
-				<div class="head gallows-part" data-opacity="0"></div>
-				<div class="neck gallows-part" data-opacity="0"></div>
-				<div class="body">
-					<div class="chest gallows-part" data-opacity="0"></div>
-					<div class="right-hand gallows-part" data-opacity="0"></div>
-					<div class="left-hand gallows-part" data-opacity="0"></div>
+		<div class="shadow">
+			<div class="descripe-area"></div>
+			<div class="enter-password">
+				<div class="title">Szubienica</div>
+				<label for="password-input">Wprowadz hasło</label>
+				<input
+					class="password-input"
+					name="password-input"
+					type="text"
+					maxlength="30"
+				/>
+				<label for="descripe-input">Wprowadz opis hasła</label>
+				<input
+					class="descripe-input"
+					name="descripe-input"
+					type="text"
+					maxlength="30"
+				/>
+				<button class="start-button">Moje hasło</button>
+				<button class="generate-button">Generuj losowe hasło</button>
+			</div>
+			<div class="game">
+				<div class="hangman">
+					<div class="rope gallows-part" data-opacity="0"></div>
+					<div class="head gallows-part" data-opacity="0"></div>
+					<div class="neck gallows-part" data-opacity="0"></div>
+					<div class="body">
+						<div class="chest gallows-part" data-opacity="0"></div>
+						<div class="right-hand gallows-part" data-opacity="0"></div>
+						<div class="left-hand gallows-part" data-opacity="0"></div>
+					</div>
+					<div class="legs">
+						<div class="right-leg gallows-part" data-opacity="0"></div>
+						<div class="left-leg gallows-part" data-opacity="0"></div>
+					</div>
 				</div>
-				<div class="legs">
-					<div class="right-leg gallows-part" data-opacity="0"></div>
-					<div class="left-leg gallows-part" data-opacity="0"></div>
+				<div class="gallows">
+					<div class="gallows-right gallows-part" data-opacity="0"></div>
+					<div class="gallows-top gallows-part" data-opacity="0"></div>
 				</div>
 			</div>
-			<div class="gallows">
-				<div class="gallows-right gallows-part" data-opacity="0"></div>
-				<div class="gallows-top gallows-part" data-opacity="0"></div>
+			<div class="password"></div>
+			<div class="letter-input">
+				<input type="text" style="text-transform: uppercase" maxlength="1" />
+				<div class="button-box">
+					<button class="change-password">Zmień hasło</button>
+					<button class="ok">OK</button>
+					<button class="back">Menu główne</button>
+				</div>
+			</div>
+			<div class="lose gallows-part" data-opacity="0">
+				Przegrana!<button class="restart-lose">Restart</button>
+			</div>
+			<div class="win">
+				Zwycięstwo!<button class="restart-win">Restart</button>
 			</div>
 		</div>
-		<div class="password"></div>
-		<div class="letter-input">
-			<input type="text" style="text-transform: uppercase" maxlength="1" />
-			<div class="button-box">
-				<button class="change-password">Zmień hasło</button>
-				<button class="back">Menu główne</button>
-			</div>
-		</div>
-		<div class="lose gallows-part" data-opacity="0">
-			You Lose!<button class="restart-lose">Restart</button>
-		</div>
-		<div class="win">You Win!<button class="restart-win">Restart</button></div>
-
 		<script src="./main.js"></script>
 	</body>
 </html>

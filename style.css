@@ -4,18 +4,25 @@
 	padding: 0;
 }
 :root {
-	--gallow-color: black;
-	--text-color: #fff;
+	--gallow-color: rgb(116, 61, 61);
+	--text-color: rgb(255, 255, 255);
 }
 body {
-	background: url(./img/4.jpeg);
+	background: url(./img/Gallow-bg.jpeg);
 	background-size: cover;
 	width: 100%;
 	height: 100vh;
 	overflow: hidden;
 }
+.shadow {
+	width: 100%;
+	height: 100vh;
+	text-transform: uppercase;
+	overflow: hidden;
+	background-color: rgba(0, 0, 0, 0.438);
+}
 .title {
-	font-size: 2rem;
+	font-size: 3rem;
 	color: var(--text-color);
 }
 .game {
@@ -48,7 +55,8 @@ body {
 	font-size: 1rem;
 }
 .enter-password label {
-	font-size: 20px;
+	font-size: 1.5rem;
+	text-transform: uppercase;
 	margin-top: 20px;
 	z-index: 2;
 	color: var(--text-color);
@@ -75,14 +83,14 @@ body {
 	width: 50px;
 	position: relative;
 	top: 10px;
-	background-color: var(--gallow-color);
+	background-image: url(./img/wood.JPG);
 	border-radius: 50%;
 	display: inline-block;
 }
 .neck {
 	height: 12.5px;
 	width: 12.5px;
-	background-color: var(--gallow-color);
+	background-image: url(./img/wood.JPG);
 	display: inline-block;
 }
 .body {
@@ -97,7 +105,7 @@ body {
 	position: relative;
 	height: 100px;
 	width: 50px;
-	background-color: var(--gallow-color);
+	background-image: url(./img/wood.JPG);
 	border-radius: 20%;
 	display: inline-block;
 }
@@ -108,7 +116,7 @@ body {
 	height: 75px;
 	width: 10px;
 	transform: rotate(-45deg);
-	background-color: var(--gallow-color);
+	background-image: url(./img/wood.JPG);
 	display: inline-block;
 	border-radius: 20%;
 }
@@ -119,7 +127,7 @@ body {
 	height: 75px;
 	width: 10px;
 	transform: rotate(45deg);
-	background-color: var(--gallow-color);
+	background-image: url(./img/wood.JPG);
 	display: inline-block;
 	border-radius: 20%;
 }
@@ -130,7 +138,7 @@ body {
 	height: 75px;
 	width: 10px;
 	transform: rotate(-15deg);
-	background-color: var(--gallow-color);
+	background-image: url(./img/wood.JPG);
 	display: inline-block;
 	border-radius: 20%;
 }
@@ -141,7 +149,7 @@ body {
 	height: 75px;
 	width: 10px;
 	transform: rotate(15deg);
-	background-color: var(--gallow-color);
+	background-image: url(./img/wood.JPG);
 	display: inline-block;
 	border-radius: 20%;
 }
@@ -156,7 +164,7 @@ body {
 	width: 10px;
 	height: 100%;
 	right: -65%;
-	background-color: var(--gallow-color);
+	background-image: url(./img/wood.JPG);
 }
 .gallows-top {
 	margin-left: 35%;
@@ -164,14 +172,14 @@ body {
 	top: -302px;
 	width: 30%;
 	height: 10px;
-	background-color: var(--gallow-color);
+	background-image: url(./img/wood.JPG);
 }
 .rope {
 	position: relative;
 	top: 10px;
 	width: 5px;
 	height: 60px;
-	background-color: var(--gallow-color);
+	background-image: url(./img/wood.JPG);
 }
 .gallows-part {
 	opacity: 0;
@@ -187,7 +195,6 @@ body {
 	font-size: 3rem;
 	margin: 0 20px;
 	opacity: 0;
-	background-color: var(--gallow-color);
 }
 .show-animation {
 	animation: show-animation 1s forwards;
@@ -200,7 +207,7 @@ body {
 	width: 80%;
 	margin: 0 10%;
 	height: 3px;
-	background-color: black;
+	background-color: rgb(252, 252, 252);
 }
 .letter-input {
 	display: none;
@@ -211,8 +218,10 @@ body {
 }
 
 .letter-input input {
-	width: 50px;
+	position: relative;
+	width: 78px;
 	height: 50px;
+	right: 5px;
 	font-size: 2rem;
 	border-radius: 5px;
 	padding: auto;
@@ -245,22 +254,25 @@ body {
 .lose button,
 .win button,
 .change-password,
-.back {
+.back,
+.ok {
 	font-size: 20px;
 	margin-top: 15px;
 	padding: 0.7rem 1.5rem;
 	border-radius: 5px;
 	cursor: pointer;
-	transition: background-color 0.4s, color 0.4s;
 	z-index: 2;
+	color: #fff;
+	transition: color 0.4s, color 0.4s;
+	background-image: url(./img/wood.JPG);
 }
 .enter-password button:hover,
 .lose button:hover,
 .win button:hover,
 .change-password:hover,
-.back:hover {
-	background-color: rgb(27, 48, 169);
-	color: #fff;
+.back:hover,
+.ok:hover {
+	color: rgb(224, 11, 11);
 }
 .show {
 	opacity: 1;
@@ -279,7 +291,7 @@ body {
 		opacity: 1;
 	}
 }
-@media only screen and (max-width: 337px) {
+@media only screen and (max-width: 350px) {
 	.letter-input {
 		margin-top: 1.3rem;
 	}
@@ -303,7 +315,7 @@ body {
 		padding: 0 50px;
 	}
 	.letter-input {
-		margin-top: 4rem;
+		margin-top: 1rem;
 	}
 	.letter-input input {
 		width: 30px;
@@ -313,13 +325,12 @@ body {
 	.button-box {
 		width: 90%;
 		margin-top: 10px;
-		/* justify-content: space-around; */
 	}
 	.enter-password button,
 	.lose button,
 	.win button,
 	.change-password,
-	.back {
+	.back, .ok {
 		font-size: 1rem;
 		margin: 5px 0 10px;
 		padding: 0.5rem 0.7rem;

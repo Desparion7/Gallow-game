@@ -17,6 +17,7 @@ const inputLetterBox = document.querySelector('.letter-input');
 const inputLetter = document.querySelector('.letter-input input');
 const changeButton = document.querySelector('.change-password');
 const backButton = document.querySelector('.back');
+const okButton = document.querySelector('.ok');
 
 let lettersArray = [];
 const passwordArray = [
@@ -25,8 +26,8 @@ const passwordArray = [
 		descripe: 'Słynny Kubuś',
 	},
 	{
-		password: 'Mela',
-		descripe: 'Kot.',
+		password: 'Artur Morgan',
+		descripe: 'Imię i nazwisko głownego bohater Red Dead Redemption 2',
 	},
 	{
 		password: 'Antarktyda',
@@ -41,14 +42,15 @@ const passwordArray = [
 		descripe: 'Spadź występująca w miodzie spadziowym to wydalina?',
 	},
 	{
-		password: 'Jarek i Ciabat',
-		descripe: 'Kto nie umie grać w Dote?',
+		password: 'BRISTLEBACK',
+		descripe:
+			'Postać z Doty 2, która OTRZYMUJE MNIEJSZE OBRAŻENIA z tyłu',
 	},
 ];
 
 // Draw user password
 const startGame = () => {
-	hangman.style.display='flex'
+	hangman.style.display = 'flex';
 	if (newPasswordDes.value === '' || newPassword.value === '') {
 		newPassword.placeholder = 'Wprowadz hasło!';
 		newPasswordDes.placeholder = 'Wprowadz opis hasła!';
@@ -57,7 +59,7 @@ const startGame = () => {
 		enteredPasswordArea.style.display = 'none';
 		descripeArea.style.display = 'flex';
 
-		const newPasswordString = newPassword.value.toUpperCase();
+		const newPasswordString = newPassword.value.toUpperCase().trim();
 		lettersArray = [...newPasswordString];
 
 		createLettersZone();
@@ -66,7 +68,7 @@ const startGame = () => {
 };
 // Draw generate password
 const generateGame = () => {
-	hangman.style.display='flex'
+	hangman.style.display = 'flex';
 	const number = Math.floor(Math.random() * passwordArray.length);
 	descripeArea.textContent = passwordArray[number].descripe;
 
@@ -158,7 +160,7 @@ const drawGallow = () => {
 		if (data === '0') {
 			part.style.opacity = '1';
 			part.setAttribute('data-opacity', '1');
-			part.classList.add('show-animation')
+			part.classList.add('show-animation');
 			inputLetter.value = '';
 			losePopup.style.display = 'flex';
 			return;
@@ -177,7 +179,7 @@ const test = () => {
 const restart = () => {
 	gallowParts.forEach((part) => {
 		part.style.opacity = '0';
-		part.classList.remove('show-animation')
+		part.classList.remove('show-animation');
 		part.setAttribute('data-opacity', '0');
 	});
 	winPopup.classList.remove('show');
@@ -198,6 +200,7 @@ inputLetter.addEventListener('keypress', (e) => {
 		test();
 	}
 });
+okButton.addEventListener('click', test);
 startButton.addEventListener('click', startGame);
 generateButton.addEventListener('click', generateGame);
 changeButton.addEventListener('click', restart);
